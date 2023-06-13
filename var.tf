@@ -13,5 +13,9 @@ variable "domain_name" {
    default = "rgare_domain-s3.aws.com"
 }
 
+variable "vpc_id" {
+   default = " "
+}
+
 
 
