@@ -1,0 +1,17 @@
+FROM hashicorp/terraform:LATEST
+MAINTAINER: ASHOK REDDY
+COPY . /terraform
+WORKDIR /terraform
+RUN apk add --no-cache curl jq python3
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+RUN unzip awscliv2.zip
+RUN ./aws/install
+
+# Set environment variables for authentication or other configuration
+ENV AWS_ACCESS_KEY_ID=your_access_key_id
+ENV AWS_SECRET_ACCESS_KEY=your_secret_access_key
+ENV AWS_DEFAULT_REGION=us-east-1
+
+# Run the Terraform commands
+CMD ["terraform", "init"]
+CMD ["terraform", "apply", "-auto-approve"]
