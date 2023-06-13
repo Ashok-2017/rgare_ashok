@@ -17,5 +17,13 @@ variable "vpc_id" {
    default = " "
 }
 
+variable "instance_id" {
+   default = "ami-11500"
+}
+
+variable "instance_type" {
+   default = "t2.micro"
+}
+
 
 
