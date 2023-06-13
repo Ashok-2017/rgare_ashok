@@ -9,4 +9,9 @@ variable "subnets" {
    subnets = ["subnet_a", "subnet_b"]
 }
 
+variable "domain_name" {
+   default = "rgare_domain-s3.aws.com"
+}
+
+
 
